@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "96480bc7-bfa0-45f1-9b25-6195382f1bf8",
+		"name": "Vendor Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29212879"
+	},
+	"item": [
+		{
+			"name": "Vendor Profile Management",
+			"item": [
+				{
+					"name": "Create a new vendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Bass222i\",\n        \"contact_details\": \"7876547894\",\n        \"address\": \"La Galaxia\",\n        \"vendor_code\": \"5\",\n        \"on_time_delivery_rate\": 3.0,\n        \"quality_rating_avg\": 7.0,\n        \"average_response_time\": 70.0,\n        \"fulfillment_rate\": 6.0\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all vendors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve a specific vendor's details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a vendor's details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Anubhav Kumar\",\n        \"contact_details\": \"8700871607\",\n        \"address\": \"La Galaxia\",\n        \"vendor_code\": \"1\",\n        \"on_time_delivery_rate\": 5.0,\n        \"quality_rating_avg\": 5.0,\n        \"average_response_time\": 30.0,\n        \"fulfillment_rate\": 5.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a vendor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/5/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Model Design: Create a model to store vendor information including name, contact  \ndetails, address, and a unique vendor code.  \n● API Endpoints:  \n● POST /api/vendors/: Create a new vendor.  \n● GET /api/vendors/: List all vendors.  \n● GET /api/vendors/{vendor_id}/: Retrieve a specific vendor's details.  \n● PUT /api/vendors/{vendor_id}/: Update a vendor's details.  \n● DELETE /api/vendors/{vendor_id}/: Delete a vendor."
+		},
+		{
+			"name": "Purchase Order Tracking",
+			"item": [
+				{
+					"name": "Create a purchase order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \n        \"po_number\": \"3\",\n        \"order_date\": \"2024-05-04T14:06:00Z\",\n        \"delivery_date\": \"2024-05-04T20:12:00Z\",\n        \"items\": {\n            \"fruit\": \"banana\"\n        },\n        \"quantity\": 1,\n        \"status\": \"pending\",\n        \"quality_rating\": null,\n        \"issue_date\": \"2024-05-04T14:08:00Z\",\n        \"acknowledgment_date\": \"2024-05-04T14:08:00Z\",\n        \"vendor\": 1\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all purchase orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve details of a specific purchase order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a purchase order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"po_number\": \"1\",\n    \"order_date\": \"2024-05-01T14:02:00Z\",\n    \"delivery_date\": \"2024-05-02T14:02:00Z\",\n    \"items\": {\n        \"phone \": \"iphone 13\"\n    },\n    \"quantity\": 1,\n    \"status\": \"okay\",\n    \"quality_rating\": 75.0,\n    \"issue_date\": \"2024-05-04T14:02:00Z\",\n    \"acknowledgment_date\": \"2024-05-04T14:03:00Z\",\n    \"vendor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a purchase order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Model Design: Track purchase orders with fields like PO number, vendor reference,  \norder date, items, quantity, and status.  \n● API Endpoints:  \n● POST /api/purchase_orders/: Create a purchase order.  \n● GET /api/purchase_orders/: List all purchase orders with an option to filter by  \nvendor.  \n● GET /api/purchase_orders/{po_id}/: Retrieve details of a specific purchase order.  \n● PUT /api/purchase_orders/{po_id}/: Update a purchase order.  \n● DELETE /api/purchase_orders/{po_id}/: Delete a purchase order."
+		},
+		{
+			"name": "Vendor Performance Evaluation",
+			"item": [
+				{
+					"name": "Retrieve a vendor's performance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/1/performance",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"1",
+								"performance"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Metrics:  \n● On-Time Delivery Rate: Percentage of orders delivered by the promised date.  \n● Quality Rating: Average of quality ratings given to a vendor’s purchase orders.  \n● Response Time: Average time taken by a vendor to acknowledge or respond to  \npurchase orders.  \n● Fulfilment Rate: Percentage of purchase orders fulfilled without issues.  \n● Model Design: Add fields to the vendor model to store these performance metrics.  \n● API Endpoints:  \n● GET /api/vendors/{vendor_id}/performance: Retrieve a vendor's performance  \nmetrics."
+		}
+	]
+}
