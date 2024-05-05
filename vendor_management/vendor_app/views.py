@@ -25,14 +25,14 @@ def redirect_to_admin(request):
 class VendorViewSet(viewsets.ModelViewSet):
     queryset = Vendor.objects.all()
     serializer_class = VendorSerializer
-#     permission_classes = [IsAuthenticatedOrReadOnly]  # Require authentication for write operations
+    permission_classes = [IsAuthenticatedOrReadOnly]  # Require authentication for write operations
 
 
 # ViewSet for CRUD operations on Purchase Order
 class PurchaseOrderViewSet(viewsets.ModelViewSet):
     queryset = PurchaseOrder.objects.all()
     serializer_class = PurchaseOrderSerializer
-    # permission_classes = [IsAuthenticatedOrReadOnly]  # Require authentication for write operations
+    permission_classes = [IsAuthenticatedOrReadOnly]  # Require authentication for write operations
 
 
 # ViewSet to get Vendor performance metrics
